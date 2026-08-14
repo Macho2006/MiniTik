@@ -1,0 +1,9 @@
+    from kivy.app import App
+    from kivy.uix.label import Label
+
+    class MiniTikApp(App):
+        def build(self):
+            return Label(text='Welcome to MiniTik!')
+
+        if __name__ == '__main__':
+            MiniTikApp().run()
