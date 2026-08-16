@@ -1,0 +1,51 @@
+<!DOCTYPE html><html><head><title>{{ user.username }}</title>
+<style>body{background:#000;color:white;font-family:Arial}.header{padding:20px}.stat{display:inline-block;margin:0 15px}.stat b{font-size:22px;color:#ff0050}.btn{padding:10px 15px;margin:5px;background:#222;border:1px solid #333;border-radius:20px;color:white;cursor:pointer}.btn-live{background:#ff0050}</style>
+</head><body>
+<div class="header"><h1>{{ user.username }} {% if user.verified %}✓{% endif %}</h1>
+<p>{{ user.bio }}</p>
+<div><div class="stat"><b>{{ user.followers }}</b><br>Followers</div><div class="stat"><b>{{ user.total_likes }}</b><br>Likes</div></div>
+<p>📍 {{ user.region }} | 🎂 {{ user.dob }}</p>
+
+{% if user.username == current_user %}
+<h3>Creator Tools</h3>
+{% if user.verified %}
+<button class="btn btn-live">🔴 Go Live</button>
+<button class="btn">➕ Add Story</button>
+<button class="btn">💰 Monetization</button>
+<button class="btn">📊 Pro Mode</button>
+{% endif %}
+<button class="btn">📄 Create Page</button>
+<button class="btn" onclick="window.location.href='/support'">🛟 Customer Care</button>
+{% endif %}
+
+{% if user.username!= current_user %}
+<a href="/follow/{{ user.username }}"><button class="btn">{% if is_following %}Following{% else %}Follow{% endif %}</button></a>
+{% endif %}
+<div class="posts">
+<h3>Posts</h3>
+{% for video in videos %}
+    <div class="post">
+        <p><b>@{{ video['username'] }}</b></p>
+        
+        <!-- SHOW IMAGE OR VIDEO BASED ON TYPE -->
+        {% if video['type'] == 'image' %}
+            <img src="{{ video['video'] }}" style="width:100%; max-width:400px;">
+        {% else %}
+            <video controls src="{{ video['video'] }}" style="width:100%; max-width:400px;"></video>
+        {% endif %}
+        
+        <p class="caption">{{ video['caption'] }}</p>
+        <p>Filter: {{ video['filter'] }}</p>
+        
+        <a href="/like/{{ video['id'] }}">♡ {{ video['likes'] }}</a>
+        <a href="/comments/{{ video['id'] }}">💬 Comment</a>
+        
+        {% if session['is_admin'] or video['username'] == current_user %}
+    <a href="/delete/{{ video['id'] }}" style="color:red; font-weight:bold;" onclick="return confirm('Delete this post?')">🗑️ Delete</a>
+{% endif %}
+        
+    </div>
+    <hr>
+{% endfor %}
+</div>
+</div></body></html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head><title>Notifications - MiniTik</title>
+<style>
+body{background:#000;color:white;font-family:Arial;padding:20px}
+a{color:#ff0050;text-decoration:none}
+.notif{background:#121212;padding:15px;margin:10px 0;border-radius:10px;border-left:3px solid #ff0050}
+.avatar{width:30px;height:30px;border-radius:50%;background:#ff0050;display:inline-block;text-align:center;line-height:30px;margin-right:10px}
+</style>
+</head>
+<body>
+<a href="/">← Back</a>
+<h1>Notifications 🔔</h1>
+
+{% if notifications %}
+  {% for n in notifications %}
+  <div class="notif">
+    <span class="avatar">{{ n.from[0]|upper }}</span>
+    <b>{{ n.from }}</b> {{ n.text }}
+  </div>
+  {% endfor %}
+{% else %}
+  <p>No notifications yet</p>
+{% endif %}
+
+</body>
+</html>

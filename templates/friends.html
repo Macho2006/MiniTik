@@ -1,0 +1,8 @@
+<!DOCTYPE html><html><head><title>Friends - MiniTik</title>
+<style>body{background:#000;color:white;font-family:Arial;padding:20px} a{color:#ff0050;text-decoration:none}.user{background:#121212;padding:15px;margin:10px 0;border-radius:10px}</style>
+</head><body>
+<a href="/">← Back</a><h1>Friends / Discover 👥</h1>
+{% for u in all_users %}
+<div class="user"><b>@{{ u }}</b> {% if users[u].verified %}✓{% endif %}
+{% if u in following %}<span style="float:right">Following</span>{% else %}<a href="/follow/{{ u }}" style="float:right">Follow</a>{% endif %}</div>
+{% endfor %}</body></html>

@@ -1,0 +1,43 @@
+[
+    {
+        "id": 2,
+        "username": " Ugochukwu Munachiso ",
+        "video": "1786826052_1000066092.mp4",
+        "caption": "Mood ",
+        "likes": 2,
+        "liked_by": [
+            "MachoDev",
+            " Ugochukwu Munachiso "
+        ],
+        "comments": [
+            {
+                "user": "MachoDev",
+                "text": "awsome",
+                "time": 1786826403.3838341
+            }
+        ],
+        "shares": 0,
+        "timestamp": 1786826053.4182644
+    },
+    {
+        "id": 7,
+        "username": " Ugochukwu Munachiso ",
+        "video": "1786866657_1000117916.mp4",
+        "title": "No Title",
+        "caption": "So make I use 2hrs cook use 5mins chop am. I rather eat bread",
+        "likes": 2,
+        "comments": [
+            {
+                "user": "MachoDev",
+                "text": "hahaha",
+                "time": 1786870539.427749
+            }
+        ],
+        "liked_by": [
+            "MachoDev",
+            " Ugochukwu Munachiso "
+        ],
+        "shares": 1,
+        "timestamp": 1786870345.4555073
+    }
+]

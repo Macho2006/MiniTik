@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - MiniTik</title>
+    <style>
+        body { background: #000; color: white; font-family: Arial; text-align: center; padding: 50px; }
+        h1 { color: #FF0000; font-size: 35px; text-shadow: 0 0 10px #FF0000; }
+        .box { background: #111; padding: 30px; border-radius: 15px; width: 400px; margin: auto; border: 2px solid #FF0000; box-shadow: 0 0 15px #FF0000; }
+        input { padding: 12px; width: 80%; margin: 10px; border-radius: 8px; border: none; background: #222; color: white; }
+        button { background: #FF0000; color: white; border: none; padding: 12px 30px; border-radius: 10px; font-size: 16px; cursor: pointer; font-weight: bold; }
+        button:hover { background: #CC0000; box-shadow: 0 0 10px #FF0000; }
+        a { color: #FF0000; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <h1>🔥 MiniTik 🔥</h1>
+    <div class="box">
+        <h2>Login</h2>
+        <form method="POST">
+            <input type="text" name="username" placeholder="Username" required><br>
+            <input type="password" name="password" placeholder="Password" required><br>
+            <button type="submit">Login</button>
+        </form>
+        <br>
+        <p>Don't have an account? <a href="/signup">Sign Up</a></p>
+    </div>
+</body>
+</html>

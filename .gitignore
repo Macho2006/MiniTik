@@ -1,0 +1,5 @@
+minitik.db
+__pycache__/
+.env
+static/uploads/
+static/stories/v

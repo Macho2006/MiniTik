@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Settings - MiniTik</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{margin:0; padding:0; box-sizing:border-box}
+        body{background:#000; color:white; font-family:-apple-system, BlinkMacSystemFont, Arial; padding:50px; text-align:center}
+       .box{background:#111; max-width:500px; margin:auto; padding:30px; border-radius:15px; border:1px solid #222}
+        input,textarea{padding:12px; width:90%; border-radius:10px; border:none; background:#222; color:white; margin:10px 0; font-size:16px}
+        button{padding:12px 25px; border-radius:10px; border:none; background:#00f2ea; color:black; font-weight:bold; cursor:pointer; font-size:16px}
+        a{color:#00f2ea; text-decoration:none}
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>⚙️ Settings</h2>
+        <p style="color:#888; margin-bottom:20px">Change username and bio</p>
+        <form method="POST">
+            <p>Username:</p>
+            <input name="username" value="{{ user }}" required>
+            <p>Bio:</p>
+            <textarea name="bio" placeholder="Write bio..." rows="3">{{ users[user].bio }}</textarea><br>
+            <button type="submit">Save Changes</button>
+        </form>
+        <br>
+        <a href="/">← Back to Home</a>
+    </div>
+</body>
+</html>

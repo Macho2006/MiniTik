@@ -1,0 +1,12 @@
+<!DOCTYPE html><html><head><title>Comments</title>
+<style>body{background:#000;color:#fff;padding:20px} .comment{background:#111;padding:10px;margin:10px 0;border-radius:8px}</style>
+</head><body>
+<h2>Comments</h2>
+<form method="POST">
+    <input name="comment" placeholder="Add comment..." style="width:70%;padding:10px">
+    <button style="padding:10px;background:#ff0050;color:#fff;border:none">Post</button>
+</form>
+{% for c in comments %}
+<div class="comment"><b>@{{ c['username'] }}</b>: {{ c['comment'] }}</div>
+{% endfor %}
+<a href="/">Back</a></body></html>
